@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:social_app/presentation/splach_screen/splash_screen.dart';
+import 'package:go_router/go_router.dart';
+import 'package:social_app/features/splash/presentation/views/splash_view.dart';
 
 class AppRoutes {
-  static const String splashScreen = '/splash_screen';
-
-  static Map<String, WidgetBuilder> routes = {
-    splashScreen: (context) => SplashScreen(),
-  };
+  final router = GoRouter(routes: [
+    GoRoute(
+      path: '/',
+      builder: (context, state) => SplashView(),
+    ),
+  ]);
 }
