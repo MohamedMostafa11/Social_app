@@ -8,7 +8,6 @@ void main() {
   SystemChrome.setPreferredOrientations([
     DeviceOrientation.portraitUp,
   ]);
-
   ThemeHelper().changeTheme('primary');
   runApp(SoicalApp());
 }
