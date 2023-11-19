@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:social_app/theme/theme_helper.dart';
 import 'package:social_app/routes/app_routes.dart';
 
@@ -9,17 +10,18 @@ void main() {
     DeviceOrientation.portraitUp,
   ]);
   ThemeHelper().changeTheme('primary');
-  runApp(SoicalApp());
+  runApp(MyApp());
 }
 
-class SoicalApp extends StatelessWidget {
+class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp.router(
-      routerConfig: AppRoutes().router,
+    return MaterialApp(
       theme: theme,
       title: 'social_app',
       debugShowCheckedModeBanner: false,
+      initialRoute: AppRoutes.splashScreen,
+      routes: AppRoutes.routes,
     );
   }
 }
