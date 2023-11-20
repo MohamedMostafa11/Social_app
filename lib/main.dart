@@ -4,8 +4,8 @@ import 'package:social_app/app.dart';
 import 'package:social_app/theme/theme_helper.dart';
 //kmklmmk;;m
 import 'package:social_app/routes/app_routes.dart';
+
 //sadasdcas
-//sdacsach
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
   SystemChrome.setPreferredOrientations([
@@ -16,7 +16,3 @@ void main() {
     MyApp(),
   );
 }
-
-
-
-
