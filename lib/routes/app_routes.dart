@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:social_app/features/splash/presentation/views/onboarding_view.dart';
 import 'package:social_app/features/splash/presentation/views/splash_view.dart';
 
 class AppRoutes {
@@ -7,6 +8,10 @@ class AppRoutes {
     GoRoute(
       path: '/',
       builder: (context, state) => SplashView(),
+    ),
+    GoRoute(
+      path: '/OnboardingView',
+      builder: (context, state) => OnboardingView(),
     ),
   ]);
 }
