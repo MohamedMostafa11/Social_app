@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
-import 'package:social_app/core/app_export.dart';
 
 class CustomPinCodeTextField extends StatelessWidget {
   CustomPinCodeTextField({

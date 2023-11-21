@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:social_app/routes/app_routes.dart';
-import 'package:social_app/theme/theme_helper.dart';
+
+import 'routes/app_routes.dart';
+import 'theme/theme_helper.dart';
 
 class MyApp extends StatelessWidget {
   @override
@@ -9,7 +10,7 @@ class MyApp extends StatelessWidget {
       theme: theme,
       title: 'social_app',
       debugShowCheckedModeBanner: false,
-      routerConfig: router,
+      routerConfig:AppRoutes(). router,
     
       
     );
