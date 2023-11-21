@@ -1,17 +1,21 @@
-import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:social_app/features/splash/presentation/views/onboarding_view.dart';
-import 'package:social_app/features/splash/presentation/views/splash_view.dart';
+import '../features/splash/presentation/views/boarding_screen/boarding_screen.dart';
+import '../features/splash/presentation/views/splash_screen/splash_screen.dart';
+import '../features/Authontication/presentation/views/SignIn.dart';
 
 class AppRoutes {
   final router = GoRouter(routes: [
     GoRoute(
       path: '/',
-      builder: (context, state) => SplashView(),
+      builder: (context, state) => SplashScreen(),
     ),
     GoRoute(
       path: '/OnboardingView',
-      builder: (context, state) => OnboardingView(),
+      builder: (context, state) => BoardingScreen(),
+    ),
+    GoRoute(
+      path: '/SignIn',
+      builder: (context, state) => SignIn(),
     ),
   ]);
 }
