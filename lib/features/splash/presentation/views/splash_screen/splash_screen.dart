@@ -16,10 +16,10 @@ class SplashScreen extends StatelessWidget {
     return GestureDetector(
       onTap: () {
         // Navigate to the next screen when tapped
-        //navagation(context: context, path: "/OnboardingView");
-        //GoRouter.of(context).pushNamed("/OnboardingView",);
+        //navigation(context: context, path: "/OnboardingView");
+        //GoRouter.of(context).push("/OnboardingView",);
         //Navigator.push(context,MaterialPageRoute(builder: (context) => BoardingScreen(),));
-        Navagation(context: context, next: BoardingScreen());
+        Navigation(context: context, next: BoardingScreen());
       },
       child: SafeArea(
         child: Scaffold(

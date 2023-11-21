@@ -1,20 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
-void navagation({required context, required String path}) {
-  GoRouter.of(context).pushNamed(
+void navigation({required context, required String path}) {
+  GoRouter.of(context).push(
     path,
   );
 }
 
-void navagationWithReplace({required context, required String path}) {
-  GoRouter.of(context).pushReplacementNamed(
+void navigationWithReplace({required context, required String path}) {
+  GoRouter.of(context).pushReplacement(
     path,
   );
 }
 
 // add this to work
-void Navagation({required context, required Widget next}) {
+void Navigation({required context, required Widget next}) {
   Navigator.push(
       context,
       MaterialPageRoute(
@@ -22,7 +22,7 @@ void Navagation({required context, required Widget next}) {
       ));
 }
 
-void NavagationWithReplace({required context, required Widget next}) {
+void NavigationWithReplace({required context, required Widget next}) {
   Navigator.pushReplacement(
       context,
       MaterialPageRoute(

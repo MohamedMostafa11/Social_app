@@ -94,7 +94,8 @@ class BoardingScreen extends StatelessWidget {
                           text: "GET STARTED",
                           buttonStyle: CustomButtonStyles.fillBlueGray,
                           onPressed: () {
-                            Navagation(context: context, next: SignIn());
+                            //navigation(context: context, path: "/SignIn");
+                            Navigation(context: context, next: SignIn());
                           }),
                       SizedBox(height: 5.v)
                     ])))));
