@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:social_app/core/app_export.dart';
-import 'package:social_app/widgets/custom_icon_button.dart';
+
+import '../../core/app_export.dart';
+import '../custom_icon_button.dart';
 
 // ignore: must_be_immutable
 class AppbarTrailingIconbutton extends StatelessWidget {

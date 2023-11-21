@@ -5,11 +5,10 @@ import 'dart:io';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:social_app/core/app_export.dart';
 
 class CustomImageView extends StatelessWidget {
-  ///[imagePath] is required parameter for showing image
   String? imagePath;
-
   double? height;
   double? width;
   Color? color;
@@ -21,8 +20,6 @@ class CustomImageView extends StatelessWidget {
   BorderRadius? radius;
   BoxBorder? border;
 
-  ///a [CustomImageView] it can be used for showing any type of images
-  /// it will shows the placeholder image if image is not found on network image
   CustomImageView({
     this.imagePath,
     this.height,
@@ -60,8 +57,9 @@ class CustomImageView extends StatelessWidget {
   ///build the image with border radius
   _buildCircleImage() {
     if (radius != null) {
-      return ClipRRect(
-        borderRadius: radius ?? BorderRadius.zero,
+      return ClipPath(
+        clipper:
+            DiamondClipper(radius: 20.h), // Custom clipper for diamond shape
         child: _buildImageWithBorder(),
       );
     } else {
@@ -159,3 +157,41 @@ extension ImageTypeExtension on String {
 }
 
 enum ImageType { svg, png, network, file, unknown }
+
+class DiamondClipper extends CustomClipper<Path> {
+  final double radius;
+
+  DiamondClipper({this.radius = 0.0});
+
+  @override
+  Path getClip(Size size) {
+    var path = Path();
+    path.moveTo(size.width / 2, 0);
+    path.lineTo(size.width, size.height / 2);
+    path.lineTo(size.width / 2, size.height);
+    path.lineTo(0, size.height / 2);
+    path.close();
+
+    // If a radius is provided, apply it to the corners
+    if (radius > 0) {
+      path = Path.combine(
+        PathOperation.intersect,
+        path,
+        Path()
+          ..addRRect(
+            RRect.fromRectAndRadius(
+              Rect.fromLTWH(0, 0, size.width, size.height),
+              Radius.circular(radius),
+            ),
+          ),
+      );
+    }
+
+    return path;
+  }
+
+  @override
+  bool shouldReclip(covariant CustomClipper<Path> oldClipper) {
+    return false;
+  }
+}

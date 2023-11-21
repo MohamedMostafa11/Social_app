@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:social_app/core/app_export.dart';
+
+import '../core/app_export.dart';
 
 class CustomIconButton extends StatelessWidget {
   CustomIconButton({

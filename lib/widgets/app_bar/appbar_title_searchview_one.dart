@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:outline_gradient_button/outline_gradient_button.dart';
-import 'package:social_app/core/app_export.dart';
-import 'package:social_app/widgets/custom_search_view.dart';
+
+import '../../core/app_export.dart';
+import '../custom_search_view.dart';
 
 // ignore: must_be_immutable
 class AppbarTitleSearchviewOne extends StatelessWidget {
