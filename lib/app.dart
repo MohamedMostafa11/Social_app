@@ -9,7 +9,9 @@ class MyApp extends StatelessWidget {
       theme: theme,
       title: 'social_app',
       debugShowCheckedModeBanner: false,
-      routerConfig: AppRoutes().router,
+      routerConfig: router,
+    
+      
     );
   }
 }
