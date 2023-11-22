@@ -2,9 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:social_app/core/app_export.dart';
 import 'package:social_app/core/utils/app_functions.dart';
 import 'package:social_app/features/Authontication/presentation/views/sign_in_screen/sign_in_screen.dart';
-import 'package:social_app/features/splash/presentation/views/boarding_screen/boarding_screen.dart';
 import 'package:social_app/widgets/custom_elevated_button.dart';
-import 'package:social_app/widgets/custom_icon_button.dart';
 import 'package:social_app/widgets/custom_text_form_field.dart';
 
 // ignore: must_be_immutable
