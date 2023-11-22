@@ -167,7 +167,7 @@ class ImageConstant {
 
   static String imgSplash = '$imagePath/img_splash.png';
 
-  static String imgFilter = '$imagePath/img_filter.svg';
+  static String imgFilter = '$imagePath/img_filter.png';
 
   static String imgRectangle1967 = '$imagePath/img_rectangle_1967.png';
 
@@ -188,6 +188,10 @@ class ImageConstant {
   static String imgMu3sigq5gpw = '$imagePath/img_mu3sigq5gpw.png';
 
   static String img270591 = '$imagePath/img_27059_1.png';
+  static String imgWelcome = '$imagePath/WELCOME.svg';
+  static String img6960 = '$imagePath/Group 6960.svg';
+
+  static String imgGroup = '$imagePath/Group7013.png';
 
   static String imgEye = '$imagePath/img_eye.svg';
 
