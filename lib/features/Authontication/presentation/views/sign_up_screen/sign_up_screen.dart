@@ -10,7 +10,7 @@ import 'package:social_app/widgets/custom_text_form_field.dart';
 // ignore: must_be_immutable
 class SignUpScreen extends StatelessWidget {
   SignUpScreen({Key? key}) : super(key: key);
-
+  TextEditingController userController = TextEditingController();
   TextEditingController emailController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
   GlobalKey<FormState> _formKey = GlobalKey<FormState>();
@@ -53,10 +53,9 @@ class SignUpScreen extends StatelessWidget {
                                     mainAxisSize: MainAxisSize.min,
                                     children: [
                                       CustomTextFormField(
-                                          controller: emailController,
-                                          hintText: "Email",
-                                          textInputType:
-                                              TextInputType.emailAddress),
+                                          controller: userController,
+                                          hintText: "Username",
+                                          textInputType: TextInputType.name),
                                       SizedBox(height: 20.v),
                                       CustomTextFormField(
                                           controller: emailController,
