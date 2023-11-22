@@ -3,6 +3,7 @@ import '../features/splash/presentation/views/boarding_screen/boarding_screen.da
 import '../features/splash/presentation/views/splash_screen/splash_screen.dart';
 import '../features/Authontication/presentation/views/SignIn.dart';
 
+
 class AppRoutes {
   final router = GoRouter(routes: [
     GoRoute(
@@ -17,5 +18,5 @@ class AppRoutes {
       path: '/SignIn',
       builder: (context, state) => SignIn(),
     ),
-  ]);
+  ]); 
 }

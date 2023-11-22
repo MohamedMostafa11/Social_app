@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
-void navigation({required context, required String path}) {
+ void navigation({required context, required String path}) {
   GoRouter.of(context).push(
     path,
   );
 }
-
+ 
 void navigationWithReplace({required context, required String path}) {
   GoRouter.of(context).pushReplacement(
     path,
@@ -27,5 +27,18 @@ void NavigationWithReplace({required context, required Widget next}) {
       context,
       MaterialPageRoute(
         builder: (context) => next,
-      ));
+      ),);
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
