@@ -65,7 +65,7 @@ class _SplashScreenState extends State<SplashScreen> {
               mainAxisSize: MainAxisSize.min,
               children: [
                 CustomImageView(
-                  imagePath: ImageConstant.imgFilter,
+                  imagePath: ImageConstant.img6960,
                   height: 33.v,
                   width: 99.h,
                 ),

@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:social_app/core/utils/app_functions.dart';
 import 'package:social_app/core/utils/image_constant.dart';
 import 'package:social_app/core/utils/size_utils.dart';
+import 'package:social_app/features/Authontication/presentation/views/sign_in_screen/sign_in_screen.dart';
 import 'package:social_app/theme/custom_button_style.dart';
 import 'package:social_app/theme/custom_text_style.dart';
 import 'package:social_app/theme/theme_helper.dart';
 import 'package:social_app/widgets/custom_image_view.dart';
-import '../../../../Authontication/presentation/views/SignIn.dart';
 import '../../../../../widgets/custom_elevated_button.dart';
 
 class BoardingScreen extends StatelessWidget {
@@ -40,7 +40,7 @@ class BoardingScreen extends StatelessWidget {
               mainAxisSize: MainAxisSize.min,
               children: [
                 CustomImageView(
-                    imagePath: ImageConstant.imgFilter,
+                    imagePath: ImageConstant.img6960,
                     height: 33.v,
                     width: 99.h),
                 SizedBox(height: 32.v),
@@ -99,8 +99,7 @@ class BoardingScreen extends StatelessWidget {
                     text: "GET STARTED",
                     buttonStyle: CustomButtonStyles.fillBlueGray,
                     onPressed: () {
-                      //navigation(context: context, path: "/SignIn");
-                      Navigation(context: context, next: SignIn());
+                      Navigation(context: context, next: SignInScreen());
                     }),
                 SizedBox(height: 5.v),
               ],
