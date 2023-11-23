@@ -84,6 +84,7 @@ class SignUpScreen extends StatelessWidget {
                                               bottom: 14.v)),
                                       SizedBox(height: 40.v),
                                       CustomElevatedButton(
+                                          onPressed: () => signIN(context),
                                           text: "SIGN IN",
                                           buttonStyle: CustomButtonStyles.none,
                                           decoration: CustomButtonStyles
@@ -112,7 +113,10 @@ class SignUpScreen extends StatelessWidget {
                     ])))));
   }
 
-  /// Navigates to the signUpScreen when the action is triggered.
+  signIN(BuildContext context) {
+    Navigation(context: context, next: SignInScreen());
+  }
+
   onTapTxthaveaccount(BuildContext context) {
     Navigation(context: context, next: SignInScreen());
   }

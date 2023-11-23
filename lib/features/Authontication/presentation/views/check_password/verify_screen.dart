@@ -3,7 +3,7 @@ import 'package:social_app/core/app_export.dart';
 import 'package:flutter/src/widgets/navigator.dart';
 import 'package:social_app/core/utils/app_functions.dart';
 import 'package:social_app/features/Authontication/presentation/views/check_password/forgot_password.dart';
-import 'package:social_app/features/Authontication/presentation/views/check_password/setpassword.dart';
+import 'package:social_app/features/Authontication/presentation/views/check_password/setnewpassword.dart';
 import 'package:social_app/widgets/custom_elevated_button.dart';
 import 'package:social_app/widgets/custom_pin_code_text_field.dart';
 
@@ -167,12 +167,11 @@ class VerifyScreen extends StatelessWidget {
   }
 
   onTapTxtDonTReceiveThe(BuildContext context) {
-    Navigation(context: context, next: forgotPasswordScreen());
+    NavigationWithReplace(context: context, next: forgotPasswordScreen());
   }
 
   onTapVERIFY(BuildContext context) {
-    Navigation(context: context, next: setNewPasswordScreen());
-    // NavigationWithReplace(context: context, next: setNewPasswordScreen());  Don't neeeeeed work
+    NavigationWithReplace(context: context, next: setNewPasswordScreen());
   }
 }
 
