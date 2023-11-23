@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
+import 'package:social_app/core/app_export.dart';
 
+// ignore: must_be_immutable
 class CustomPinCodeTextField extends StatelessWidget {
   CustomPinCodeTextField({
     Key? key,
@@ -51,10 +53,10 @@ class CustomPinCodeTextField extends StatelessWidget {
           FilteringTextInputFormatter.digitsOnly,
         ],
         pinTheme: PinTheme(
-          shape: PinCodeFieldShape.circle,
-          inactiveColor: Colors.transparent,
-          activeColor: Colors.transparent,
-          selectedColor: Colors.transparent,
+          shape: PinCodeFieldShape.underline,
+          inactiveColor: Colors.black87,
+          activeColor: Colors.black87,
+          selectedColor: PrimaryColors().indigo400,
         ),
         onChanged: (value) => onChanged(value),
         validator: validator,
