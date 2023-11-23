@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:social_app/core/app_export.dart';
 import 'package:social_app/core/utils/app_functions.dart';
+import 'package:social_app/features/Authontication/presentation/views/check_password/verify_screen.dart';
 import 'package:social_app/features/Authontication/presentation/views/sign_up_screen/sign_up_screen.dart';
 import 'package:social_app/features/splash/presentation/views/boarding_screen/boarding_screen.dart';
 import 'package:social_app/widgets/custom_elevated_button.dart';
@@ -154,7 +155,7 @@ class SignInScreen extends StatelessWidget {
 
   /// Navigates to the forgotPasswordScreen when the action is triggered.
   onTapTxtFORGOTPASSWORD(BuildContext context) {
-    Navigation(context: context, next: BoardingScreen());
+    Navigation(context: context, next: VerifyScreen());
   }
 
   /// Navigates to the signUpScreen when the action is triggered.
