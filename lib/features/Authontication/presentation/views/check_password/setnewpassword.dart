@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:social_app/features/Authontication/presentation/views/check_password/setnewpassword.dart';
-import 'package:social_app/features/Authontication/presentation/views/check_password/verify_screen.dart';
 import '../../../../../core/app_export.dart';
 import '../../../../../core/utils/app_functions.dart';
 import '../sign_in_screen/sign_in_screen.dart';
@@ -8,10 +6,11 @@ import '../../../../../widgets/custom_elevated_button.dart';
 import '../../../../../widgets/custom_text_form_field.dart';
 
 // ignore: must_be_immutable
-class forgotPasswordScreen extends StatelessWidget {
-  forgotPasswordScreen({Key? key}) : super(key: key);
+class setNewPasswordScreen extends StatelessWidget {
+  setNewPasswordScreen({Key? key}) : super(key: key);
 
-  TextEditingController emailController = TextEditingController();
+  TextEditingController passwordController = TextEditingController();
+  TextEditingController confirmPasswordController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -50,19 +49,56 @@ class forgotPasswordScreen extends StatelessWidget {
                                 child: Column(
                                     mainAxisSize: MainAxisSize.min,
                                     children: [
-                                      Text("TYPE YOUR EMAIL",
+                                      Text("SET NEW PASSWORD",
                                           style: CustomTextStyles
                                               .titleMediumPrimary),
                                       SizedBox(height: 14.v),
                                       _buildFrame(context),
-                                      SizedBox(height: 35.v),
+                                      SizedBox(height: 30.v),
                                       CustomTextFormField(
-                                          controller: emailController,
-                                          hintText: "Email",
-                                          width: 315.h,
+                                          controller: passwordController,
+                                          hintText: "Password",
+                                          textInputAction: TextInputAction.done,
                                           textInputType:
-                                              TextInputType.emailAddress),
-                                      SizedBox(height: 70.v),
+                                              TextInputType.visiblePassword,
+                                          suffix: Container(
+                                              margin: EdgeInsets.fromLTRB(
+                                                  30.h, 13.v, 20.h, 13.v),
+                                              child: CustomImageView(
+                                                  imagePath:
+                                                      ImageConstant.imgEye,
+                                                  height: 24.adaptSize,
+                                                  width: 24.adaptSize)),
+                                          suffixConstraints:
+                                              BoxConstraints(maxHeight: 50.v),
+                                          obscureText: true,
+                                          contentPadding: EdgeInsets.only(
+                                              left: 20.h,
+                                              top: 14.v,
+                                              bottom: 14.v)),
+                                      SizedBox(height: 30.v),
+                                      CustomTextFormField(
+                                          controller: confirmPasswordController,
+                                          hintText: "Confirm Password",
+                                          textInputAction: TextInputAction.done,
+                                          textInputType:
+                                              TextInputType.visiblePassword,
+                                          suffix: Container(
+                                              margin: EdgeInsets.fromLTRB(
+                                                  30.h, 13.v, 20.h, 13.v),
+                                              child: CustomImageView(
+                                                  imagePath:
+                                                      ImageConstant.imgEye,
+                                                  height: 24.adaptSize,
+                                                  width: 24.adaptSize)),
+                                          suffixConstraints:
+                                              BoxConstraints(maxHeight: 50.v),
+                                          obscureText: true,
+                                          contentPadding: EdgeInsets.only(
+                                              left: 20.h,
+                                              top: 14.v,
+                                              bottom: 14.v)),
+                                      SizedBox(height: 30.v),
                                       CustomElevatedButton(
                                           text: "SEND",
                                           margin: EdgeInsets.symmetric(
@@ -155,7 +191,7 @@ class forgotPasswordScreen extends StatelessWidget {
   }
 
   onTapSEND(BuildContext context) {
-    Navigation(context: context, next: VerifyScreen());
+    NavigationWithReplace(context: context, next: SignInScreen());
   }
 }
 
@@ -166,8 +202,7 @@ Widget _buildFrame(BuildContext context) {
           .copyWith(borderRadius: BorderRadiusStyle.roundedBorder12),
       child: SizedBox(
           width: 281.h,
-          child: Text(
-              "We will send you instruction on \n how to reset your password",
+          child: Text("Type your new password",
               maxLines: 2,
               overflow: TextOverflow.ellipsis,
               textAlign: TextAlign.center,
