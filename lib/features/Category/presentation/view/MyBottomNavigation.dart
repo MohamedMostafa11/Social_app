@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:social_app/features/Category/presentation/view/Home.dart';
+import 'package:social_app/features/Category/presentation/view/add_screen/add_screen.dart';
+import 'package:social_app/features/Category/presentation/view/home_screen/home_screen.dart';
+import 'package:social_app/features/Category/presentation/view/notification_screen/Notification_screen.dart';
+import 'package:social_app/features/Category/presentation/view/profile_screen/profile_screen.dart';
+import 'package:social_app/features/Category/presentation/view/search_screen/search_screen.dart';
 
 class MyBottomNavigation extends StatefulWidget {
   const MyBottomNavigation({Key? key}) : super(key: key);
