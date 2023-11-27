@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
+import 'package:social_app/core/app_export.dart';
+import 'package:social_app/features/Category/presentation/view/NavigationbarrWidget.dart';
 import 'package:social_app/features/Category/presentation/view/add_screen/add_screen.dart';
 import 'package:social_app/features/Category/presentation/view/home_screen/home_screen.dart';
 import 'package:social_app/features/Category/presentation/view/notification_screen/Notification_screen.dart';
@@ -23,8 +26,10 @@ class _MyBottomNavigation extends State<MyBottomNavigation> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: pagesName[_currentIndex],
-        bottomNavigationBar: BottomNavigationBar(
+      body: pagesName[_currentIndex],
+      bottomNavigationBar: NavigationbarrWidget(),
+
+      /* BottomNavigationBar(
           currentIndex: _currentIndex,
           onTap: (index) {
             setState(() {
@@ -39,6 +44,7 @@ class _MyBottomNavigation extends State<MyBottomNavigation> {
                 icon: Icon(Icons.notifications), label: "Notification"),
             BottomNavigationBarItem(icon: Icon(Icons.person), label: "Profile"),
           ],
-        ));
+        )*/
+    );
   }
 }
