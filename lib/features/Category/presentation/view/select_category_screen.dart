@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:social_app/core/app_export.dart';
 import 'package:social_app/core/utils/app_functions.dart';
+import 'package:social_app/features/Category/presentation/CardModel.dart';
+import 'package:social_app/features/Category/presentation/view/MyBottomNavigation.dart';
 import 'package:social_app/features/Category/presentation/widgets/selectcategorysection_item_widget.dart';
 import 'package:social_app/features/splash/presentation/views/boarding_screen/boarding_screen.dart';
 import 'package:social_app/widgets/custom_elevated_button.dart';
@@ -17,7 +19,7 @@ class SelectCategoryScreen extends StatelessWidget {
                 width: double.maxFinite,
                 child: Column(children: [
                   _buildFilterSection(context),
-                  SizedBox(height: 0.v),
+                  SizedBox(height: 20.v),
                   Text("Who are you?",
                       style: CustomTextStyles.titleLargeGray90002),
                   SizedBox(height: 36.v),
@@ -32,12 +34,12 @@ class SelectCategoryScreen extends StatelessWidget {
 
   Widget _buildFilterSection(BuildContext context) {
     return SizedBox(
-        height: 95.v,
+        height: 150.v,
         width: double.maxFinite,
         child: Stack(alignment: Alignment.center, children: [
           CustomImageView(
               imagePath: ImageConstant.imgMaskGroup,
-              height: 139.v,
+              height: 155.v,
               width: 375.h,
               alignment: Alignment.center),
           CustomImageView(
@@ -59,9 +61,10 @@ class SelectCategoryScreen extends StatelessWidget {
                 mainAxisSpacing: 19.h,
                 crossAxisSpacing: 19.h),
             physics: NeverScrollableScrollPhysics(),
-            itemCount: 4,
+            itemCount: cards.length,
             itemBuilder: (context, index) {
-              return SelectcategorysectionItemWidget();
+              return SelectcategorysectionItemWidget(
+                  imagePath: cards[index].imagepath, title: cards[index].title);
             }));
   }
 
@@ -79,6 +82,6 @@ class SelectCategoryScreen extends StatelessWidget {
   }
 
   onTapEXPLORENOW(BuildContext context) {
-    Navigation(context: context, next: BoardingScreen());
+    Navigation(context: context, next: MyBottomNavigation());
   }
 }

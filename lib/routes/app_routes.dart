@@ -4,6 +4,7 @@ import 'package:social_app/features/Authontication/presentation/views/check_pass
 import 'package:social_app/features/Authontication/presentation/views/check_password/verify_screen.dart';
 import 'package:social_app/features/Authontication/presentation/views/sign_in_screen/sign_in_screen.dart';
 import 'package:social_app/features/Authontication/presentation/views/sign_up_screen/sign_up_screen.dart';
+import 'package:social_app/features/Category/presentation/view/MyBottomNavigation.dart';
 import 'package:social_app/features/Category/presentation/view/select_category_screen.dart';
 import '../features/splash/presentation/views/boarding_screen/boarding_screen.dart';
 import '../features/splash/presentation/views/splash_screen/splash_screen.dart';
@@ -12,7 +13,7 @@ class AppRoutes {
   final router = GoRouter(routes: [
     GoRoute(
       path: '/',
-      builder: (context, state) => SelectCategoryScreen(),
+      builder: (context, state) => MyBottomNavigation(),
     ),
     GoRoute(
       path: '/OnboardingView',

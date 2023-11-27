@@ -1,9 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:social_app/core/app_export.dart';
+import 'package:social_app/widgets/custom_image_view2.dart';
 
 // ignore: must_be_immutable
 class SelectcategorysectionItemWidget extends StatelessWidget {
-  const SelectcategorysectionItemWidget({Key? key})
+  final String imagePath;
+  final String title;
+  const SelectcategorysectionItemWidget(
+      {Key? key, required this.imagePath, required this.title})
       : super(
           key: key,
         );
@@ -16,15 +20,6 @@ class SelectcategorysectionItemWidget extends StatelessWidget {
       child: Stack(
         alignment: Alignment.center,
         children: [
-          CustomImageView(
-            imagePath: ImageConstant.imgWxm465om4j4,
-            height: 180.v,
-            width: 153.h,
-            radius: BorderRadius.circular(
-              12.h,
-            ),
-            alignment: Alignment.center,
-          ),
           Align(
             alignment: Alignment.center,
             child: Card(
@@ -38,14 +33,14 @@ class SelectcategorysectionItemWidget extends StatelessWidget {
                 height: 180.v,
                 width: 153.h,
                 decoration: AppDecoration.gradientGrayToGray90003.copyWith(
-                  borderRadius: BorderRadiusStyle.roundedBorder12,
-                ),
+                    borderRadius: BorderRadiusStyle.roundedBorder12,
+                    image: DecorationImage(image: AssetImage(imagePath))),
                 child: Stack(
                   alignment: Alignment.bottomCenter,
                   children: [
                     Opacity(
-                      opacity: 0.3,
-                      child: CustomImageView(
+                      opacity: 0.5,
+                      child: CustomImageView2(
                         imagePath: ImageConstant.img270591180x153,
                         height: 180.v,
                         width: 153.h,
@@ -60,7 +55,7 @@ class SelectcategorysectionItemWidget extends StatelessWidget {
                       child: Padding(
                         padding: EdgeInsets.only(bottom: 19.v),
                         child: Text(
-                          "Photographer",
+                          title,
                           style: CustomTextStyles.titleMediumWhiteA700_1,
                         ),
                       ),
